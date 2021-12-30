@@ -1,0 +1,8 @@
+FROM harbor.uatha.cloudtogo.local/cloudtogo/python:2.7.18-alpine3.11
+COPY . /workspace
+WORKDIR /workspace/${SUBMODULE}
+RUN pip install --no-cache-dir -r requirements.txt
+RUN touch test-Dockerfile.txt
+CMD ["python", "./main.py"]
+
+##自定义dockerfile,test目录下dockerfile-test,修改dockerfile
